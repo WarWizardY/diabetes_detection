@@ -1,0 +1,80 @@
+﻿=================================================================
+  DIABETES DETECTION (SYMPTOM-BASED) - TRAINING
+=================================================================
+
+[1/7] Loading and encoding data...
+  Total samples: 520
+  Diabetic: 320 | Non-Diabetic: 200
+
+[2/7] Preparing features...
+  Total features: 16
+  Features: ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring', 'Itching', 'Irritability', 'delayed healing', 'partial paresis', 'muscle stiffness', 'Alopecia', 'Obesity']
+
+[3/7] Splitting data (80/20)...
+  Train: 416 | Test: 104
+  Train distribution: {1: np.int64(256), 0: np.int64(160)}
+
+[4/7] Class balance check...
+  Positive: 61.5% | Negative: 38.5%
+  Dataset is reasonably balanced - no SMOTE needed!
+
+[5/7] Training Random Forest...
+  Model trained!
+
+[6/7] Evaluating model...
+=================================================================
+
+  RESULTS ON TEST SET (104 patients)
+  -------------------------------------------
+  Accuracy  : 98.08%
+  Precision : 100.00%
+  Recall    : 96.88%
+  F1 Score  : 98.41%
+  AUC-ROC   : 1.0000
+
+  CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+Non-Diabetic       0.95      1.00      0.98        40
+    Diabetic       1.00      0.97      0.98        64
+
+    accuracy                           0.98       104
+   macro avg       0.98      0.98      0.98       104
+weighted avg       0.98      0.98      0.98       104
+
+  5-FOLD CROSS VALIDATION:
+  F1 scores: ['0.976', '0.985', '0.992', '0.984', '0.952']
+  Mean F1: 0.978 (+/- 0.014)
+  Mean Accuracy: 0.973 (+/- 0.017)
+
+[7/7] Saving outputs...
+  Saved: confusion_matrix_roc.png
+  Saved: feature_importance.png
+  Saved: diabetes_rf_model.pkl
+  Saved: feature_importance.csv
+  Saved: feature_names.pkl
+
+=================================================================
+  TRAINING COMPLETE!
+=================================================================
+
+  Model: Random Forest (200 trees, max_depth=12)
+  Features: 16 (16 symptoms + Age + Gender)
+  NO blood tests required - symptom-based only!
+
+  Key metrics:
+    Accuracy  = 98.08%
+    F1 Score  = 98.41%
+    AUC-ROC   = 1.0000
+
+  Top 5 most important symptoms:
+
+    1. Excessive Thirst          -> 0.2195
+    2. Frequent Urination        -> 0.2054
+    3. Gender                    -> 0.1101
+    4. Age                       -> 0.0849
+    5. Sudden Weight Loss        -> 0.0727
+
+  All outputs saved to: d:\Miniproject\model_outputs
+
+=================================================================

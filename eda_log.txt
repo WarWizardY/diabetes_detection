@@ -1,0 +1,102 @@
+﻿=================================================================
+  DIABETES DETECTION (SYMPTOM-BASED) - EDA
+=================================================================
+
+Dataset shape: 520 rows x 17 columns
+Columns: ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring', 'Itching', 'Irritability', 'delayed healing', 'partial paresis', 'muscle stiffness', 'Alopecia', 'Obesity', 'class']
+
+-----------------------------------------------------------------
+  DATA TYPES & MISSING VALUES
+-----------------------------------------------------------------
+Age                    int64
+Gender                object
+Polyuria              object
+Polydipsia            object
+sudden weight loss    object
+weakness              object
+Polyphagia            object
+Genital thrush        object
+visual blurring       object
+Itching               object
+Irritability          object
+delayed healing       object
+partial paresis       object
+muscle stiffness      object
+Alopecia              object
+Obesity               object
+class                 object
+
+Missing values: 0 total
+
+-----------------------------------------------------------------
+  TARGET: DIABETES CLASS
+-----------------------------------------------------------------
+  Positive: 320 (61.5%)
+  Negative: 200 (38.5%)
+
+Saved: target_distribution.png
+Saved: symptom_prevalence.png
+Saved: correlation_heatmap.png
+
+-----------------------------------------------------------------
+  CORRELATION WITH DIABETES (Target)
+-----------------------------------------------------------------
+  Polyuria                 : +0.6659  +|||||||||||||||||||
+  Polydipsia               : +0.6487  +|||||||||||||||||||
+  Sudden Weight Loss       : +0.4366  +|||||||||||||
+  Partial Paresis          : +0.4323  +||||||||||||
+  Polyphagia               : +0.3425  +||||||||||
+  Irritability             : +0.2995  +||||||||
+  Visual Blurring          : +0.2513  +|||||||
+  Weakness                 : +0.2433  +|||||||
+  Muscle Stiffness         : +0.1225  +|||
+  Genital Thrush           : +0.1103  +|||
+  Age                      : +0.1087  +|||
+  Obesity                  : +0.0722  +||
+  Delayed Healing          : +0.0470  +|
+  Itching                  : -0.0134  -
+  Alopecia                 : -0.2675  -||||||||
+  Gender                   : -0.4492  -|||||||||||||
+Saved: diabetes_by_gender.png
+
+-----------------------------------------------------------------
+  TOP SYMPTOM COMBINATIONS IN DIABETIC PATIENTS
+-----------------------------------------------------------------
+  Polyuria                 : 243 patients (76%)
+  Polydipsia               : 225 patients (70%)
+  Weakness                 : 218 patients (68%)
+  Partial Paresis          : 192 patients (60%)
+  Polyphagia               : 189 patients (59%)
+  Sudden Weight Loss       : 188 patients (59%)
+  Visual Blurring          : 175 patients (55%)
+  Itching                  : 154 patients (48%)
+  Delayed Healing          : 153 patients (48%)
+  Muscle Stiffness         : 135 patients (42%)
+  Irritability             : 110 patients (34%)
+  Genital Thrush           :  83 patients (26%)
+  Alopecia                 :  78 patients (24%)
+  Obesity                  :  61 patients (19%)
+
+=================================================================
+  EDA SUMMARY
+=================================================================
+
+  DATASET: UCI Early Stage Diabetes Risk Prediction
+  Source: Sylhet Diabetes Hospital, Bangladesh (questionnaire-based)
+  Total patients: 520
+  Diabetic (Positive): 320 (61.5%)
+  Non-Diabetic (Negative): 200 (38.5%)
+
+  FEATURES: 16 symptom-based (Yes/No) + Age + Gender
+  NO blood tests or lab results required!
+
+  TOP PREDICTIVE SYMPTOMS (by correlation):
+    1. Polyuria (frequent urination)
+    2. Polydipsia (excessive thirst)
+    3. Gender (males slightly higher risk)
+    4. Sudden weight loss
+    5. Partial paresis (muscle weakness)
+
+  All plots saved to: d:\Miniproject\eda_outputs
+
+=================================================================
